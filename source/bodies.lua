@@ -33,7 +33,7 @@ function handleBodies()
         batchcount = math.floor ( 0.5 + (#allBodyArray/batchsize) )
     end
 
-    DebugWatch("batch progress", math.floor(currentBatch*100/batchcount))
+    --DebugWatch("batch progress", math.floor(currentBatch*100/batchcount))
 
     local arrayStart = 1 + (batchsize * currentBatch)
     local arrayEnd = batchsize * (currentBatch+1)

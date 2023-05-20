@@ -1,5 +1,3 @@
 Performance mod that doesn't care about not being intrusive. 
 This will break your game. I do not care. 
 Use at your own risk.
-
-[url=https://github.com/SigmaSkid/IntrusivePerformance]git[/url]
