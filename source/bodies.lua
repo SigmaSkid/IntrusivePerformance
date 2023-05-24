@@ -59,18 +59,16 @@ function handleBodies()
             local totalMomentum = VecAdd(velocity, angularVelocity)
             local velLength = VecLength(totalMomentum)
 
-            if not important then 
-                -- delete smoll objects
-                if sizeAprox < 3 or voxels < 30 then
-                    Delete(body)
-
-                -- freeze low velocity objects
-                elseif velLength < 0.1 then 
-                    local suffering = {}
-                    suffering.handle = body 
-                    suffering.time = curTime + (#allBodyArray/batchsize)*0.016
-                    freezeEm[#freezeEm + 1] = suffering
-                end
+            -- delete smoll objects
+            if sizeAprox < 3 or voxels < 30 then
+                Delete(body)
+            
+            -- freeze low velocity objects
+            elseif velLength < 0.5 then 
+                local suffering = {}
+                suffering.handle = body 
+                suffering.time = curTime + (#allBodyArray/batchsize)*0.016
+                freezeEm[#freezeEm + 1] = suffering
             end
         end 
     end
@@ -81,10 +79,6 @@ function handleBodies()
         if curTime < object.time and IsHandleValid(object) then 
             owoified[#owoified + 1] = object
             SetBodyActive(object.handle, false)
-            --SetBodyDynamic(object.handle, false)
-        --else 
-            --SetBodyActive(object.handle, false)
-            --SetBodyDynamic(object.handle, true)
         end
     end
     freezeEm = owoified
