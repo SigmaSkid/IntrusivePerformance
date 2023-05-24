@@ -1,4 +1,0 @@
-name = IntP
-author = LilWeaboo
-description = Intrusive Performance mod
-tags = Gameplay
