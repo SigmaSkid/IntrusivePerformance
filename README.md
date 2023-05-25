@@ -5,7 +5,7 @@ The goal of this mod is to make the game run smoothly.
 
 # Current Features
 ## Removing/freezing dynamic objects.
-Teardown's physics system experiences performance issues when simulating around ~300 dynamic objects.  
+Teardown's physics system experiences performance issues when simulating around ~300 active dynamic objects.  
 This mod removes insignificant objects to reduce the stress on that component of the game.  
 It also assists the game in freezing objects faster after their velocity has decreased to a practically static state.
 
