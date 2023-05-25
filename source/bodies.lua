@@ -43,8 +43,11 @@ function handleBodies()
     for i=arrayStart,arrayEnd,1 do
         local body = allBodyArray[i]
 
-        if IsBodyDynamic(body) and IsHandleValid(body) and not isImportant(body) then 
-            --local active = IsBodyActive(body)
+        if IsBodyDynamic(body) 
+            and IsBodyActive(body)
+            and IsHandleValid(body) 
+            and not isImportant(body)  then 
+                
             local shapes = GetBodyShapes(body)
             local voxels = 0
             for i=1, #shapes do 
@@ -60,7 +63,7 @@ function handleBodies()
             local velLength = VecLength(totalMomentum)
 
             -- delete smoll objects
-            if sizeAprox < 3 or voxels < 30 then
+            if sizeAprox < 2 or voxels < 10 then
                 Delete(body)
             
             -- freeze low velocity objects
